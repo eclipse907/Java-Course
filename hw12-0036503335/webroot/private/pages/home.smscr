@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <h1>My Web Server</h1>
+  
+  <p>Scripts</p>
+  <a href="http://127.0.0.1:5721/scripts/osnovni.smscr">osnovni.smscr</a>
+  <a href="http://127.0.0.1:5721/scripts/brojPoziva.smscr">brojPoziva.smscr</a>
+  <a href="http://127.0.0.1:5721/scripts/fibonaccih.smscr">fibonaccih.smscr</a>
+  
+  <p>Workers</p>
+  <a href="http://127.0.0.1:5721/hello">Hello Worker</a>
+  <a href="http://127.0.0.1:5721/cw">Circle Worker</a>
+  
+  <p>Sum a and b</p>
+  <form action="/calc" method="GET">
+  	<label for="a">a:</label><br>
+  	<input type="text" id="a" name="a"><br>
+  	<label for="b">b:</label><br>
+  	<input type="text" id="b" name="b"><br><br>
+  	<input type="submit" value="Sum">
+  </form>
+  
+  <p>Select Color</p>
+  <form action="/setColor" method="GET">
+	<select name="bgcolor">
+		<option hidden disabled selected value>-select a color-</option>
+  		<option value="FF0000">Red</option>
+  		<option value="00FF00">Green</option>
+  		<option value="0000FF">Blue</option>
+  		<option value="FFFFFF">White</option>
+  		<option value="FFA500">Orange</option>
+	</select><br><br>
+	<input type="submit" value="Set Color">
+  </form>
+
+	<style>
+ 		body {background-color: #{$= "background" 0 @tparamGet $};}
+	</style>
+
+</body>
+</html>
